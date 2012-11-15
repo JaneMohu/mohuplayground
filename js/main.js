@@ -45,4 +45,14 @@
     return src;
   };
 
+  var render = function() {
+    var source = prepareSource();
+    var iframe = document.querySelector('#output iframe'),
+        iframe_doc = iframe.contentDocument;
+
+    iframe_doc.open();
+    iframe_doc.write(source);
+    iframe_doc.close();
+  }
+
 }());
