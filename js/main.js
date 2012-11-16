@@ -3,12 +3,16 @@
     css_editor = document.querySelector('#css textarea'),
     js_editor = document.querySelector('#js textarea');
 
-  var editors = [html_editor, css_editor, js_editor];
+  var editors = [html_editor, css_editor, js_editor],
+      code = '';
 
   // Attaching the onkeyup event
   editors.forEach(function(editor, i, arr) {
     editor.addEventListener('keyup', function() {
-      render();
+      if(code !== this.value) {
+        render();
+        code = this.value;
+      }
     }, false);
   });
 
