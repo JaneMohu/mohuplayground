@@ -27,6 +27,9 @@
     "</body>\n" +
     "</html>";
 
+  // TODO: place iframe on a different subdomain and use HTML5 postMessage to communicate with it
+  // (HTML5 postMessage works in IE8 and up)
+
   var prepareSource = function() {
     var html = html_editor.value,
         css = css_editor.value,
